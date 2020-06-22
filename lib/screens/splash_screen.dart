@@ -1,18 +1,18 @@
 import 'dart:math';
 
+import 'package:dcapp/generated/l10n.dart';
 import 'package:dcapp/models/splash_model.dart';
+import 'package:dcapp/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:splashscreen/splashscreen.dart';
 
-import 'home_screen.dart';
-
-class DCApp extends StatefulWidget {
+class SplashScreenDC extends StatefulWidget {
   @override
-  _DCAppState createState() => new _DCAppState();
+  _SplashScreenDCState createState() => new _SplashScreenDCState();
 }
 
-class _DCAppState extends State<DCApp> {
+class _SplashScreenDCState extends State<SplashScreenDC> {
   static Splash _superman = new Splash(
       backgroundColor: Color.fromRGBO(2, 88, 233, 1),
       primaryColor: Color.fromRGBO(254, 0, 0, 1),
@@ -87,12 +87,11 @@ class _DCAppState extends State<DCApp> {
       loaderColor: _splash.primaryColor,
       loadingText: Text.rich(TextSpan(children: [
         TextSpan(
-            text: "Andrés Gómez Jaramillo 2020",
+            text: AppLocalizations.of(context).creator,
             style: TextStyle(
                 fontWeight: FontWeight.bold, color: _splash.primaryColor)),
-
         TextSpan(
-            text: " © Todos los derechos reservados",
+            text: AppLocalizations.of(context).copyRight,
             style: TextStyle(
                 fontWeight: FontWeight.bold, color: _splash.secondColor))
       ])),
